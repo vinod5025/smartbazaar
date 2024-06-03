@@ -1,0 +1,74 @@
+<%- include("navbar.ejs"); %>
+<div class="container-fluid p-3 bg-white shadow border">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="heading">Review Product</h3>
+        </div>
+        <br>
+        <div class="col-md-3 mb-3">
+            <b>Product Name:</b>
+            <%=product_info[0].product_name%>
+        </div>
+        <div class="col-md-3 mb-3">
+            <b>Product Price:</b>
+            &#8377; <%=product_info[0].product_price%>
+        </div>
+        <div class="col-md-3 mb-3">
+            <b>Duplicete Price:</b>
+            &#8377; <%=product_info[0].duplicate_price%>
+        </div>
+        <div class="col-md-3 mb-3">
+            <b>Product Size:</b>
+             <%=product_info[0].product_size%>
+        </div>
+        <div class="col-md-3 mb-3">
+            <b>Product Color:</b> 
+             <%=product_info[0].product_color%>
+        </div>
+        <div class="col-md-3 mb-3">
+            <b>Product Exchange Days:</b>
+             <%=product_info[0].product_exchange_in%> Days
+        </div>
+        <div class="col-md-3 mb-3">
+            <b>Business Name:</b>
+             <%=product_info[0].business_name%> Days
+        </div>
+        <div class="col-md-3 mb-3">
+            <b>Category Name:</b>
+             <%=product_info[0].category_name%>
+        </div>
+        <div class="col-md-12 mb-3">
+            <b>Product Details:</b>
+             <%=product_info[0].product_information%>
+        </div>
+        <div class="col-md-4 mb-3">
+            <b>Image 1:</b>
+             <img src="/uploads/<%=product_info[0].product_image1%>"  width="100px;">
+        </div>
+        <div class="col-md-4 mb-3">
+            <b>Image 2:</b>
+             <img src="/uploads/<%=product_info[0].product_image2%>"  width="100px;">
+        </div>
+        <div class="col-md-4 mb-3">
+            <b>Image 3:</b>
+             <img src="/uploads/<%=product_info[0].product_image3%>"  width="100px;">
+        </div>
+        <% if(product_info[0].status == 'pending') { %>
+        <div class="col-md-4">
+            <a href="/admin/aprove_products/<%=product_info[0].product_id%>">
+                <button class="btn btn-dark">Approve</button>
+            </a>
+            <a href="/admin/rejected_products/<%=product_info[0].product_id%>">
+                <button class="btn btn-danger">Reject</button>
+            </a>
+           
+        </div>
+        <% } %>
+        <!-- <div class="col-md-4">
+        <a href="/admin/d/<%=product_info[0].product_id%>">
+            <button class="btn btn-danger">Reject</button>
+        </a>
+        </div> -->
+    </div>
+</div>
+<%- include("footer.ejs"); %>

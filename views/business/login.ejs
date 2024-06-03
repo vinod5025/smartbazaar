@@ -1,0 +1,36 @@
+<%- include('../user/navbar.ejs'); %>
+<style>
+    .form-control {
+                        height: 40px;
+                        padding-left: 10px !important;
+                        padding-right: 10px !important;
+    }
+</style>
+<form action="/business/login_business_process" method="post">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <div class="shadow border p-3">
+                    <h3 class="text-center" style="color: black;">Login Business</h3>
+                    <br>
+                    Business Email
+                    <input type="emal" name="business_email" class="form-control">
+                    Business Password
+                    <input type="password" name="business_password" class="form-control">
+                    <br>
+                    <center>
+                    <button class="btn btn-primary">Login Now</button>
+                    </center>
+                    <center class="mt-2 p-3">
+                        <a href="/business/register" class="text-center">
+                            <button class="btn btn-light">New Business Register Here</button>
+                        </a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%- include('../user/footer.ejs'); %>

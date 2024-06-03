@@ -1,0 +1,81 @@
+<!-- <h1>Admin Login page open</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/admin/admin_process_login" method="post">
+                Enter Email:
+                <input type="email" name="admin_email" class="form-control">
+                <br>
+                Enter Password:
+                <input type="password" name="admin_password" class="form-control">
+                <br>
+                <button class="btn btn-primary">Login Now</button>
+             </form>
+        </div>
+    </div>
+</div> -->
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+</style>
+<div class="login-container">
+    <h2>Admin Login</h2>
+    <form action="/admin/admin_process_login" method="post">
+      <input type="text" placeholder="admin_email" required name="admin_email">
+      <input type="password" placeholder="admin_password" required name="admin_password"><br>
+      <button type="submit" class="btn btn-primary">Login Now </button>
+    </form>
+    <center>
+      <!-- <a href="/admin/admin_register">
+          <button class="btn btn-primary p-0">New Admin Registeration</button>
+
+        </a> -->
+    </center>
+  </div>
+  

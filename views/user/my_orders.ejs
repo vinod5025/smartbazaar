@@ -1,0 +1,40 @@
+<%- include("navbar.ejs") %>
+<br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>My Orders</h3>
+            <br>
+        </div>
+    </div>
+    <% for(var i=0;i<orders.length;i++){%>
+        <div class="row  justify-content-center align-items-center mt-3 pb-3" style="border-bottom: 1px solid lavender;">
+            <div class="col-md-1 p-0">
+                <img src="/uploads/<%=orders[i].product_image1%>" width="100%">
+
+            </div>
+            <div class="col-7">
+                <div style="font-size: 20px;"><%=orders[i].product_name%></div>
+                <div style="font-size: 16px;"><%=orders[i].order_date.split("-").reverse().join("-")%></div>
+                <div style="font-size: 16px;">&#8377; <%=orders[i].product_price%> x <%=orders[i].qty%> Qty. </div>
+                <div style="font-size: 16px;color: <%=(orders[i].payment_status=='success') ? 'green':'red'%>;"><%=(orders[i].payment_status=='success') ? 'Payment Paid':'Payment Pending'%></div>
+            </div>
+            <div class="col-2">
+                <div style="font-size: 20px; font-weight: bold;text-align: center;">₹ <%=orders[i].total_price%></div>
+                <div style="font-size: 16px;text-align: center;"><%=orders[i].payment_type%></div>
+                <div style="font-size: 16px;text-align: center;">
+                <a href="/print_invoice/<%=orders[i].order_id%>">
+                    <button class="btn btn-sm p-0 pl-2 pr-2"><i class="fa fa-print"></i></button>
+                </a>
+                </div>
+            </div>
+
+            
+
+
+        </div>
+
+     <% } %>
+</div>
+<%- include("footer.ejs") %>

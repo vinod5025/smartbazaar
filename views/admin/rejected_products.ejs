@@ -1,0 +1,40 @@
+<%- include("navbar.ejs"); %>
+<div class="container-fluid p-3 bg-white shadow border">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="heading">Rejected Products</h3>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered table-sm">
+                <tr>
+                    <th>Action</th>
+                    <th>Sr.No.</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Business</th>
+                    <th>Category </th>
+                </tr>
+                <% for(var i=0;i<products.length;i++){ %>
+                    <tr>
+                        <td width="1%" style="white-space: no-wrap;">
+                            <a href="/admin/review_product/<%=products[i].product_id%>">
+                                <button class="btn btn-dark p-0 ps-2 pe-2 mb-2">Approve</button>
+                            </a>
+                            <br>
+                            <a href="/admin/review_product/<%=products[i].product_id%>">
+                                <button class="btn btn-danger p-0 ps-2 pe-2 mb-2">Reject</button>
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=products[i].product_name%></td>
+                        <td>&#8377; <%=products[i].product_price%></td>
+                        <td><%=products[i].business_name%></td>
+                        <td><%=products[i].category_name%></td>
+                    </tr>
+
+                    <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include("footer.ejs"); %>

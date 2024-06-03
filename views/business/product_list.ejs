@@ -1,0 +1,40 @@
+<%- include('navbar.ejs'); %>
+<div class="container-fluid p-4 bg-white shadow border">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="heading">Product List</h3>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered table-sm table-stripped">
+                <tr>
+                    <th>Action</th>
+                    <th>Sr.No.</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+                <% for(var i=0;i<products.length;i++){ %>
+                    <tr>
+                    <td></td>
+                    <td><%=i+1%></td>
+                    <td><%=products[i].product_name%></td>
+                    <td><%=products[i].category_name%></td>
+                    <td><%=products[i].product_price%></td>
+                    <td>
+                    <a href="/uploads/<%=products[i].product_image1%>" target="_blank">
+                        <button class="btn btn-outline-dark p-1 ps-2 pe-2" style="border-radius: 50px;">Open</button>
+                    </a></td>
+                    <td><%=products[i].status%></td>
+                    <td><%=products[i].verified_date%></td>
+                    </tr>
+                    <% } %> 
+                    
+                    
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs'); %>

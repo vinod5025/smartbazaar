@@ -1,0 +1,68 @@
+<%- include('navbar.ejs'); %>
+<form action="/business/save_product" method="post" enctype="multipart/form-data">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="heading">Add New Product</h1>
+        </div>
+        <div class="col-md-4 mt-3">
+            Select Category
+            <select class="form-control required" name="product_category_id">
+                <option disabled selected>Choose</option>
+                <% for(var i=0;i<cat_list.length;i++){ %>
+                    <option value="<%=cat_list[i].product_category_id%>" >
+                        <%=cat_list[i].category_name%>
+                    </option>
+
+                    <% } %>  
+            </select>
+        </div>
+
+        <div class="col-md-4 mt-3">
+            Product name
+            <input type="text" name="product_name" class="form-control">
+        </div>
+        <div class="col-md-4 mt-3">
+            Product Price
+            <input type="number" name="product_price" class="form-control">
+        </div>
+        <div class="col-md-4 mt-3">
+            Duplicate Price
+            <input type="number" name="duplicate_price" class="form-control">
+        </div>
+        <div class="col-md-4 mt-3">
+            Product Image1
+            <input type="file" name="product_image1" accept="image/*" class="form-control" required>
+        </div>
+        <div class="col-md-4 mt-3">
+            Product Image2
+            <input type="file" name="product_image2" accept="image/*" class="form-control">
+        </div>
+        <div class="col-md-4 mt-3">
+            Product Image3
+            <input type="file" name="product_image3" accept="image/*" class="form-control">
+        </div>
+        <div class="col-md-4 mt-3">
+            Product Size
+            <input type="text" name="product_size" class="form-control">
+        </div>
+        <div class="col-md-2 mt-3">
+            Product Color
+            <input type="color" name="product_color" class="form-control">
+        </div>
+        <div class="col-md-2 mt-3">
+            Exchange In * Days
+            <input type="text" name="product_exchange_in"class="form-control">
+        </div>
+        <div class="col-md-12 mt-3">
+            Product Information
+            <textarea type="text" name="product_information"  class="form-control"></textarea>
+        </div>
+        <div class="col-md-12 text-center">
+            <br>
+            <button class="btn btn-dark">Save Product</button>
+        </div>
+    </div>
+</div>
+</form>
+<%- include('footer.ejs'); %>

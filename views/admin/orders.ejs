@@ -1,0 +1,43 @@
+<%- include('navbar.ejs') %>
+<div class="container-fluid">
+    <div class="row bg-white p-0 mt-3 pt-2 border shadow">
+        <div class="col-md-12">
+            <h3 class="heading">Orders</h3>
+        </div>
+        <div class="col-md-12 mt-3">
+            <table class="table table-bordered text-center table-sm">
+                <tr>
+                    <th>Action</th>
+                    <th>Sr.No.</th>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Business</th>
+                    <th>Date</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                </tr>
+                <% for(var i=0;i<orders.length;i++){%>
+                    <tr>
+                        <td>
+                            <a href="/admin/order_detail/<%=orders[i].order_id%>">
+                            <button class="btn btn-primary">View</button>
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td>S.B0<%=orders[i].order_id%></td>
+                        <td><%=orders[i].fname%> <%=orders[i].lname%></td>
+                        <td><%=orders[i].business_name%></td>
+                        <td><%=orders[i].order_date%></td>
+                        <td><%=orders[i].product_name%></td>
+                        <td><%=orders[i].qty%> Qty.</td>
+                        <td>₹ <%=orders[i].product_price%></td>
+                        <td class="fw-bold">₹ <%=orders[i].total_price%></td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>

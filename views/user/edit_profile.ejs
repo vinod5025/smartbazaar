@@ -1,0 +1,27 @@
+<%- include('navbar.ejs'); %>
+<form action="/update_profile" method="post">
+    <div class="container mt-4 shadow">
+        <div class="row justify-content-center">
+            <div class="col-md-7 p-5 border shadow">
+                <h3 class="heading">Edit Profile</h3>
+                <br>
+                Enter Name
+                <input type="text" name="user_name" class="form-control">
+                <br>
+                Enter Mobile
+                <input type="number" name="user_mobile" class="form-control">
+                <br>
+                Enter Email
+                <input type="email" name="user_email" class="form-control">
+                <br>
+                Enter Password
+                <input type="password" name="user_password" class="form-control">
+                <br>
+                <center>
+                    <button class="btn btn-primary">Update Profile</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include('footer.ejs'); %>

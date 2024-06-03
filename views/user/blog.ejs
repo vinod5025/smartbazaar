@@ -1,0 +1,44 @@
+<%- include('navbar.ejs'); %>
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bread-inner">
+                    <ul class="bread-list">
+                        <li><a href="/">Home<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start Shop Blog  -->
+<section class="shop-blog section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h2>From Our Blog</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <% for(var i=0;i<blogs.length;i++){%>
+            <div class="col-lg-4 col-md-6 col-12 <%= (i == 0) ? 'active' : '' %>">
+                <!-- Start Single Blog  -->
+                <div class="shop-single-blog">
+                    <img src="uploads/<%=blogs[i].blog_image%>" width="100%" style="max-width: 400px;max-height: 400px;" > 
+                    <div class="content">
+                        <a href="#" class="title"><%=blogs[i].blog_title%></a>
+                        <a href="#" class="more-btn"><%=blogs[i].blog_des%></a>
+                    </div>
+                </div>
+                <!-- End Single Blog  -->
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+<!-- End Shop Blog  -->
+<%- include('footer.ejs'); %>

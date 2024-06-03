@@ -1,0 +1,21 @@
+<%- include('navbar.ejs'); %>
+<form action="/login_account" method="post">
+    <div class="container mt-4 shadow">
+        <div class="row justify-content-center">
+            <div class="col-md-7 p-5 border shadow">
+                <h3 class="heading">Login Account</h3>
+                <br>
+                Enter Email
+                <input type="email" name="user_email" class="form-control">
+                <br>
+                Enter Password
+                <input type="password" name="user_password" class="form-control">
+                <br>
+                <center>
+                    <button class="btn btn-primary">Login Now</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include('footer.ejs'); %>

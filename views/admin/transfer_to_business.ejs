@@ -1,0 +1,23 @@
+<%- include("navbar.ejs"); %>
+<form action="/admin/save_to_business" method="post" class="form-control"> 
+<div class="container">
+    <div class="row bg-white p-2  shadow mt-3 mb-3">
+        <div class="col-md-12 mb-2">
+            <h3 class="heading">Transfer To Business</h3>
+        </div>
+        <div class="col-md-6 text-center">
+            <input type="hidden" name="order_id" id="" value="<%=order_id%>">
+            Enter Transaction No:
+            <input type="text" name="transfer_no" class="form-control">
+        </div>
+        <div class="col-md-6 text-center">
+            <br>
+            <button class="btn btn-dark">Transfer Now</button>
+        </div>
+    </div>
+</div>
+</form>
+
+<%- include("footer.ejs"); %>
+
+

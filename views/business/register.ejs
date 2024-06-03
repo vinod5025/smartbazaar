@@ -1,0 +1,36 @@
+<%- include('../user/navbar.ejs'); %>
+<style>
+    .form-control {
+                        height: 40px;
+                        padding-left: 10px !important;
+                        padding-right: 10px !important;
+    }
+</style>
+<form action="/business/save_business" method="post">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <div class="shadow border p-3">
+                    <h3 class="heading" style="color: black;">Register Your Business</h3>
+                    Enter Your Name
+                    <input type="text" name="person_name" class="form-control">
+                    Enter Your Contact
+                    <input type="text" name="contact_no" class="form-control">
+                    Enter Business Name
+                    <input type="text" name="business_name" class="form-control">
+                    Business Email
+                    <input type="emal" name="business_email" class="form-control">
+                    Business Password
+                    <input type="password" name="business_password" class="form-control">
+                    <br>
+                    <center>
+                    <button class="btn btn-primary">Register Now</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%- include('../user/footer.ejs'); %>
