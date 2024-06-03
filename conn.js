@@ -5,7 +5,6 @@ var conn=mysql.createConnection({
     user:"root",
     password:"",
     database:"smartbazar"
-
 });
 var exe=util.promisify(conn.query).bind(conn);
 module.exports=exe;
